@@ -14,6 +14,7 @@
 		BE5EC977245A73C400204906 /* OpenRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC976245A73C400204906 /* OpenRouterProtocol.swift */; };
 		BE5EC97A245A758200204906 /* OpenRouterRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC979245A758200204906 /* OpenRouterRegister.swift */; };
 		BE5EC97C245A75D400204906 /* OpenRouterContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC97B245A75D400204906 /* OpenRouterContext.swift */; };
+		BE5EC98A245AC1CA00204906 /* OpenRouterMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC989245AC1CA00204906 /* OpenRouterMatcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		BE5EC976245A73C400204906 /* OpenRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenRouterProtocol.swift; sourceTree = "<group>"; };
 		BE5EC979245A758200204906 /* OpenRouterRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenRouterRegister.swift; sourceTree = "<group>"; };
 		BE5EC97B245A75D400204906 /* OpenRouterContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenRouterContext.swift; sourceTree = "<group>"; };
+		BE5EC989245AC1CA00204906 /* OpenRouterMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenRouterMatcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				BE5EC978245A74F300204906 /* Core */,
+				BE5EC988245AC18700204906 /* Matcher */,
 				BE5EC973245A71A400204906 /* OpenRouter.swift */,
 				BE5EC975245A72D400204906 /* Register */,
 			);
@@ -120,6 +123,14 @@
 				BE5EC97B245A75D400204906 /* OpenRouterContext.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		BE5EC988245AC18700204906 /* Matcher */ = {
+			isa = PBXGroup;
+			children = (
+				BE5EC989245AC1CA00204906 /* OpenRouterMatcher.swift */,
+			);
+			path = Matcher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5EC98A245AC1CA00204906 /* OpenRouterMatcher.swift in Sources */,
 				BE5EC974245A71A400204906 /* OpenRouter.swift in Sources */,
 				BE5EC97A245A758200204906 /* OpenRouterRegister.swift in Sources */,
 				BE5EC97C245A75D400204906 /* OpenRouterContext.swift in Sources */,

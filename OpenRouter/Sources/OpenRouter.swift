@@ -12,7 +12,7 @@ public class OpenRouter: NSObject {
     static let shared = OpenRouter()
     
     func setup() {
-        OpenRouterRegister.shared.autoRegisterClass()
+        OpenRouterRegister.shared.autoRegisterRouting()
     }
 }
 

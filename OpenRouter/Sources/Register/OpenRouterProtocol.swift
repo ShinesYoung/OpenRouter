@@ -8,17 +8,13 @@
 
 import Foundation
 
-typealias RouteBlock = (() -> Void)
 
 
 @objc public protocol OpenRouterClassRegistrable {
-    
     static func routeKeys() -> [String]
-    
 }
 
 @objc public protocol OpenRouterBlockRegistrable {
-    
-    static func routeKeysAndBlocks() -> [String: AnyObject]
-    
+//    typealias RoutingBlock = ((String, [String: Any]) -> Bool)
+    static func routeKeysAndBlocks() -> [String: Any]
 }

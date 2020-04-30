@@ -51,7 +51,7 @@ class OpenRouterRegister: NSObject {
         OpenRouterContext.routeClassMapper[key] = classType
     }
 
-    public func registerBlock(_ block:AnyObject, for key:String) {
+    public func registerBlock(_ block:Any, for key:String) {
         OpenRouterContext.routeBlockMapper[key] = block
     }
 
