@@ -12,6 +12,6 @@ class OpenRouterMatcher: NSObject {
     public static let shared = OpenRouterRegister()
     
     func match(key:String, userInfo:[String:Any]) -> UIViewController {
-        
+        return UIViewController()
     }
 }
