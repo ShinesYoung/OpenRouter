@@ -8,14 +8,18 @@
 
 import UIKit
 
-class OpenRouter: NSObject {
+public class OpenRouter: NSObject {
+    static let shared = OpenRouter()
     
+    func setup() {
+        OpenRouterRegister.shared.autoRegisterClass()
+    }
 }
 
 // MARK:- Router setup
 extension OpenRouter {
     
-    func setup() {
-        OpenRouterRegister.shared.autoRegisterClass()
+    public static func setup() {
+        OpenRouter.shared.setup()
     }
 }

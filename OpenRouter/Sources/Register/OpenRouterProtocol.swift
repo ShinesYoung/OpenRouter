@@ -8,8 +8,17 @@
 
 import Foundation
 
-@objc protocol OpenRouterRegistrable {
+typealias RouteBlock = (() -> Void)
+
+
+@objc public protocol OpenRouterClassRegistrable {
     
     static func routeKeys() -> [String]
+    
+}
+
+@objc public protocol OpenRouterBlockRegistrable {
+    
+    static func routeKeysAndBlocks() -> [String: AnyObject]
     
 }

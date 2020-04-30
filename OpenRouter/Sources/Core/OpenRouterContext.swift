@@ -8,10 +8,10 @@
 
 import Foundation
 
-class OpenRouterContext {
+public class OpenRouterContext {
     
-    static var routeClassMapper = [String: AnyClass]()
-    static var routeBlockMapper = [String: AnyObject]()
+    public static var routeClassMapper = [String: AnyClass]()
+    public static var routeBlockMapper = [String: AnyObject]()
     
     static func clear() {
         routeClassMapper.removeAll()
