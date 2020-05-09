@@ -9,7 +9,7 @@
 import UIKit
 
 class OpenRouterMatcher: NSObject {
-    public static let shared = OpenRouterRegister()
+    public static let shared = ORTRegister()
     
     func match(key:String, userInfo:[String:Any]) -> UIViewController {
         return UIViewController()

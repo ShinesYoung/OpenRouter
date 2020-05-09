@@ -10,11 +10,10 @@ import Foundation
 
 
 
-@objc public protocol OpenRouterClassRegistrable {
+@objc public protocol ORTClassRegistrable: NSObjectProtocol {
     static func routeKeys() -> [String]
 }
 
-@objc public protocol OpenRouterBlockRegistrable {
-//    typealias RoutingBlock = ((String, [String: Any]) -> Bool)
+@objc public protocol ORTBlockRegistrable: NSObjectProtocol {
     static func routeKeysAndBlocks() -> [String: Any]
 }

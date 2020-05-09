@@ -8,13 +8,15 @@
 
 import Foundation
 
-public class OpenRouterContext {
+public class ORTContext {
     
     public static var routeClassMapper = [String: AnyClass]()
     public static var routeBlockMapper = [String: Any]()
+    public static var routeActionMapper = [String: Any]()
     
     static func clear() {
         routeClassMapper.removeAll()
         routeBlockMapper.removeAll()
+        routeActionMapper.removeAll()
     }
 }

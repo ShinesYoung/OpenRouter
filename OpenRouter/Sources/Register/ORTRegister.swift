@@ -8,8 +8,8 @@
 
 import UIKit
 
-class OpenRouterRegister: NSObject {
-    public static let shared = OpenRouterRegister()
+class ORTRegister: NSObject {
+    public static let shared = ORTRegister()
     
     public func autoRegisterRouting() {
         
@@ -17,30 +17,30 @@ class OpenRouterRegister: NSObject {
         let allClasses = objc_copyClassList(&count)!
         print("class count = \(count)")
         
-        let classRegisterProtocol:Protocol = OpenRouterClassRegistrable.self
-        let blockRegisterProtocol:Protocol = OpenRouterBlockRegistrable.self
+        let classRegisterProtocol:Protocol = ORTClassRegistrable.self
+        let blockRegisterProtocol:Protocol = ORTBlockRegistrable.self
         
         for index in 0 ..< count {
             let aClass: AnyClass = allClasses[Int(index)]
             if class_conformsToProtocol(aClass, classRegisterProtocol) == true {
-                let registrableClass = aClass as! OpenRouterClassRegistrable.Type
+                let registrableClass = aClass as! ORTClassRegistrable.Type
                 registerRoutingClass(registrableClass: registrableClass)
                 
             } else if class_conformsToProtocol(aClass, blockRegisterProtocol) == true {
-                let registrableClass = aClass as! OpenRouterBlockRegistrable.Type
+                let registrableClass = aClass as! ORTBlockRegistrable.Type
                 registerRoutingBlocks(registrableClass: registrableClass)
             }
         }
     }
     
-    public func registerRoutingClass(registrableClass: OpenRouterClassRegistrable.Type) {
+    public func registerRoutingClass(registrableClass: ORTClassRegistrable.Type) {
         let routeKeys = registrableClass.routeKeys()
         for aKey in routeKeys {
             registerClass(registrableClass, for: aKey)
         }
     }
     
-    public func registerRoutingBlocks(registrableClass: OpenRouterBlockRegistrable.Type) {
+    public func registerRoutingBlocks(registrableClass: ORTBlockRegistrable.Type) {
         let routeKeysAndBlocks = registrableClass.routeKeysAndBlocks()
         for (key, value) in routeKeysAndBlocks {
             registerBlock(value, for: key)
@@ -48,11 +48,11 @@ class OpenRouterRegister: NSObject {
     }
     
     public func registerClass(_ classType:AnyClass, for key:String) {
-        OpenRouterContext.routeClassMapper[key] = classType
+        ORTContext.routeClassMapper[key] = classType
     }
 
     public func registerBlock(_ block:Any, for key:String) {
-        OpenRouterContext.routeBlockMapper[key] = block
+        ORTContext.routeBlockMapper[key] = block
     }
 
 }
