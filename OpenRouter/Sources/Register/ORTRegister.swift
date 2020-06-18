@@ -13,15 +13,30 @@ class ORTRegister: NSObject {
     
     public func autoRegisterRouting() {
         
-        var count: UInt32 = 0
-        let allClasses = objc_copyClassList(&count)!
-        print("class count = \(count)")
+        var classNumber: Int32 = 0
+        var classBuffer: [AnyClass]
         
+        classNumber = objc_getClassList(nil, 0)
+        classBuffer = [AnyClass](repeating: NSObject.self, count: Int(classNumber))
+        classBuffer.withUnsafeMutableBufferPointer { buffer in
+            let autoreleasingPointer = AutoreleasingUnsafeMutablePointer<AnyClass>(buffer.baseAddress)
+            objc_getClassList(autoreleasingPointer, classNumber)
+        }
+        
+        let methodSignSEL  = NSSelectorFromString("methodSignatureForSelector:")
+        let unrecognizeSEL = NSSelectorFromString("doesNotRecognizeSelector:")
         let classRegisterProtocol:Protocol = ORTClassRegistrable.self
         let blockRegisterProtocol:Protocol = ORTBlockRegistrable.self
         
-        for index in 0 ..< count {
-            let aClass: AnyClass = allClasses[Int(index)]
+        for index in 0 ..< classNumber {
+            let aClass: AnyClass = classBuffer[Int(index)]
+            guard class_respondsToSelector(aClass, methodSignSEL) else {
+                continue
+            }
+            guard class_respondsToSelector(aClass, unrecognizeSEL) else {
+                continue
+            }
+            
             if class_conformsToProtocol(aClass, classRegisterProtocol) == true {
                 let registrableClass = aClass as! ORTClassRegistrable.Type
                 registerRoutingClass(registrableClass: registrableClass)
