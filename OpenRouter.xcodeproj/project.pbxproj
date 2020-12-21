@@ -11,10 +11,13 @@
 		BE5EC967245A704F00204906 /* OpenRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC966245A704F00204906 /* OpenRouterTests.swift */; };
 		BE5EC969245A704F00204906 /* OpenRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = BE5EC95B245A704F00204906 /* OpenRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE5EC974245A71A400204906 /* OpenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC973245A71A400204906 /* OpenRouter.swift */; };
-		BE5EC977245A73C400204906 /* ORTProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC976245A73C400204906 /* ORTProtocols.swift */; };
+		BE5EC977245A73C400204906 /* ORTRouterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC976245A73C400204906 /* ORTRouterProtocols.swift */; };
 		BE5EC97A245A758200204906 /* ORTRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC979245A758200204906 /* ORTRegister.swift */; };
 		BE5EC97C245A75D400204906 /* ORTContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC97B245A75D400204906 /* ORTContext.swift */; };
 		BE5EC98A245AC1CA00204906 /* OpenRouterMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5EC989245AC1CA00204906 /* OpenRouterMatcher.swift */; };
+		BED0D39825906B6A008B7F23 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BED0D39725906B6A008B7F23 /* README.md */; };
+		BED0D39D25906E07008B7F23 /* ORTSimpleStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED0D39C25906E07008B7F23 /* ORTSimpleStack.swift */; };
+		BED0D3A325906E81008B7F23 /* ORTStackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED0D3A225906E81008B7F23 /* ORTStackProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +38,13 @@
 		BE5EC966245A704F00204906 /* OpenRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenRouterTests.swift; sourceTree = "<group>"; };
 		BE5EC968245A704F00204906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE5EC973245A71A400204906 /* OpenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenRouter.swift; sourceTree = "<group>"; };
-		BE5EC976245A73C400204906 /* ORTProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORTProtocols.swift; sourceTree = "<group>"; };
+		BE5EC976245A73C400204906 /* ORTRouterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORTRouterProtocols.swift; sourceTree = "<group>"; };
 		BE5EC979245A758200204906 /* ORTRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORTRegister.swift; sourceTree = "<group>"; };
 		BE5EC97B245A75D400204906 /* ORTContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORTContext.swift; sourceTree = "<group>"; };
 		BE5EC989245AC1CA00204906 /* OpenRouterMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenRouterMatcher.swift; sourceTree = "<group>"; };
+		BED0D39725906B6A008B7F23 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BED0D39C25906E07008B7F23 /* ORTSimpleStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORTSimpleStack.swift; sourceTree = "<group>"; };
+		BED0D3A225906E81008B7F23 /* ORTStackProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORTStackProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 		BE5EC94E245A704F00204906 = {
 			isa = PBXGroup;
 			children = (
+				BED0D39725906B6A008B7F23 /* README.md */,
 				BE5EC95A245A704F00204906 /* OpenRouter */,
 				BE5EC965245A704F00204906 /* OpenRouterTests */,
 				BE5EC959245A704F00204906 /* Products */,
@@ -100,6 +107,7 @@
 		BE5EC972245A717D00204906 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BED0D39B25906DBC008B7F23 /* Stack */,
 				BE5EC978245A74F300204906 /* Core */,
 				BE5EC988245AC18700204906 /* Matcher */,
 				BE5EC973245A71A400204906 /* OpenRouter.swift */,
@@ -111,7 +119,7 @@
 		BE5EC975245A72D400204906 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				BE5EC976245A73C400204906 /* ORTProtocols.swift */,
+				BE5EC976245A73C400204906 /* ORTRouterProtocols.swift */,
 				BE5EC979245A758200204906 /* ORTRegister.swift */,
 			);
 			path = Register;
@@ -131,6 +139,15 @@
 				BE5EC989245AC1CA00204906 /* OpenRouterMatcher.swift */,
 			);
 			path = Matcher;
+			sourceTree = "<group>";
+		};
+		BED0D39B25906DBC008B7F23 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				BED0D39C25906E07008B7F23 /* ORTSimpleStack.swift */,
+				BED0D3A225906E81008B7F23 /* ORTStackProtocol.swift */,
+			);
+			path = Stack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED0D39825906B6A008B7F23 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,11 +261,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED0D39D25906E07008B7F23 /* ORTSimpleStack.swift in Sources */,
 				BE5EC98A245AC1CA00204906 /* OpenRouterMatcher.swift in Sources */,
+				BED0D3A325906E81008B7F23 /* ORTStackProtocol.swift in Sources */,
 				BE5EC974245A71A400204906 /* OpenRouter.swift in Sources */,
 				BE5EC97A245A758200204906 /* ORTRegister.swift in Sources */,
 				BE5EC97C245A75D400204906 /* ORTContext.swift in Sources */,
-				BE5EC977245A73C400204906 /* ORTProtocols.swift in Sources */,
+				BE5EC977245A73C400204906 /* ORTRouterProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

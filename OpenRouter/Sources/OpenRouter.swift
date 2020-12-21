@@ -11,6 +11,12 @@ import UIKit
 public class OpenRouter: NSObject {
     static let shared = OpenRouter()
     
+    static let defaultStack = ORTSimpleStack()
+    
+    
+    var context: ORTContext = ORTContext()
+    
+    
     func setup() {
         ORTRegister.shared.autoRegisterRouting()
     }
